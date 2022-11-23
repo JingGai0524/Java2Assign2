@@ -9,29 +9,28 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Server {
-    public static ArrayList<Socket> sockets = new ArrayList<>();
-    public static ArrayList<Integer> ids = new ArrayList<>();
-    public static int cnt = 0;
-    public static void main(String[] args) throws IOException {
-        System.out.println("服务器启动");
-        ServerSocket server = new ServerSocket(Main.PORT_NUMBER);
+  public static ArrayList<Socket> sockets = new ArrayList<>();
+  public static ArrayList<Integer> ids = new ArrayList<>();
+  public static int cnt = 0;
+  public static void main(String[] args) throws IOException {
+    System.out.println("服务器启动");
+    ServerSocket server = new ServerSocket(Main.PORT_NUMBER);
         while(true) {
-            Socket p = server.accept();
+      Socket p = server.accept();
 
-            Server_listen2 l = new Server_listen2(p);
-            Thread l2 = new Thread(l);
-            l2.start();
-            l2.interrupt();
+      Server_listen2 l = new Server_listen2(p);
+      Thread l2 = new Thread(l);
+      l2.start();
+      l2.interrupt();
 
 
-            sockets.add(p);
-            ids.add(cnt++);
-            System.out.println(cnt);
+      sockets.add(p);
+      ids.add(cnt++);
+      System.out.println(cnt);
 
-            OutputStream outputStream = p.getOutputStream();
-            byte[] msg = ("ID" + (cnt - 1)).getBytes();
-            outputStream.write(msg);
-
+      OutputStream outputStream = p.getOutputStream();
+      byte[] msg = ("ID" + (cnt - 1)).getBytes();
+      outputStream.write(msg);
 
             for (Socket i : sockets) {
                 OutputStream outputStream1 = i.getOutputStream();

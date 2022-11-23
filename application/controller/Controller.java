@@ -20,14 +20,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-    public static int id;
-    private static final int PLAY_1 = 1;
-    private static final int PLAY_2 = 2;
-    private static final int EMPTY = 0;
-    private static final int BOUND = 90;
-    private static final int OFFSET = 15;
-
-    @FXML
+  public static int id;
+  private static final int PLAY_1 = 1;
+  private static final int PLAY_2 = 2;
+  private static final int EMPTY = 0;
+  private static final int BOUND = 90;
+  private static final int OFFSET = 15;
+   @FXML
     private Pane base_square;
 
     @FXML

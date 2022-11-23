@@ -12,11 +12,10 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class Main extends Application {
-    public static int PORT_NUMBER = 1234;
-
-    public static FXMLLoader fxmlLoader = new FXMLLoader();
+  public static int PORT_NUMBER = 1234;
+  public static FXMLLoader fxmlLoader = new FXMLLoader();
     @Override
-    public void start(Stage primaryStage) throws IOException {
+  public void start(Stage primaryStage) throws IOException {
         try {
             fxmlLoader.setLocation(getClass().getClassLoader().getResource("mainUI.fxml"));
             Pane root = fxmlLoader.load();

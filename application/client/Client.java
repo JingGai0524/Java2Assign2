@@ -12,13 +12,13 @@ import java.util.Scanner;
 
 public class Client{
 
-    public static void change(Socket socket){
+  public static void change(Socket socket){
         Controller.TURN = !Controller.TURN;
     }
 
-    public static Socket socket;
+  public static Socket socket;
 
-    public static void init() {
+  public static void init() {
         try {
 
             socket = new Socket("localhost", 1234);
